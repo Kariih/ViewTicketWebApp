@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<head>
+  <title>Ticket viewer</title>
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css.css')}}">
+</head>
+<body>
+  <div id="container">
+    <h1>Ticket Viewer Dashboard</h1>
+      <a href="{{ url_for('showTicketList', page=page) }}">< back</a>
+      <h2>{{ ticket["subject"] }}</h2>
+      <p>
+        Status: {{ ticket["status"] }} • Priority: {{ ticket["priority"] }} • Created at: {{ ticket["created_at"] }}
+      </p>
+      <br>
+      <p id="description">
+        {{ ticket["description"] }}
+      </p>
+  </div>
+</body>
+</html>

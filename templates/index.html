@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <head>
   <title>Ticket viewer</title>
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css.css')}}">
 </head>
 <body>
-
+  <div id="container">
+    <h1>Ticket Viewer Dashboard</h1>
+    <div class="link_container">
+      <a href="{{ url_for('showTicketList', page=1) }}" id="load_btn">Load tickets from server</a>
+    </div>
+    <img src="{{ url_for('static', filename='tickets.png') }}" alt="ticket icon">
+    <p id="licence">Icon made by pongsakornRed from www.flaticon.com<p>
+  </div>
 </body>
 </html>

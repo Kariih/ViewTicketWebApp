@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head>
+  <title>Ticket viewer</title>
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css.css')}}">
+</head>
+<body>
+  <div id="container">
+    <h1>Ticket Viewer Dashboard</h1>
+    <a href="{{ url_for('index') }}">< back</a>
+    <ul>
+    {% for ticket in tickets %}
+      <li><a href="{{ url_for('showSingleTicket', page=page, id=ticket['id']) }}" class="ticket_link">Ticket: {{ ticket["subject"] }}</a> <p>Status: {{ ticket["status"] }} • Priority: {{ ticket["priority"] }} • Created at: {{ ticket["created_at"] }} <p></li>
+    {% endfor %}
+    </ul>
+    {% if prev > 0 %}
+        <a href="{{ url_for('showTicketList', page=prev) }}">< prev</a>
+    {% endif %}
+    {% if next > 0 %}
+        <a href="{{ url_for('showTicketList', page=next) }}">next ></a>
+    {% endif %}
+  </div>
+</body>
+</html>
