@@ -11,8 +11,8 @@ h1{
   font-weight: lighter;
   font-size: 40px;
   color: #000000;
-  width: 451px;
-  margin: auto;
+  width: 100%;
+  text-align: center;
 }
 h2{
   font-family: 'Playfair Display', serif;
@@ -21,30 +21,29 @@ h2{
   color: #000000;
 }
 a:link, a:visited{
-  font-family: 'Playfair Display', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: lighter;
   font-size: 20px;
   color: #000000;
-  margin-top: 10px;
-  display: block;
+  display: inline;
 }
 a:hover{
   color: #FFBF41;
 }
 #load_btn{
   width: 220px;
+  display: block;
   margin: auto;
 }
 li{
-  border-bottom: 2px dashed #666666;
+  border-bottom: 2px dashed #FFBF41;
   list-style-type: none;
 }
 p{
-  font-family: 'Playfair Display', serif;
+  font-family: 'Lato', sans-serif;
   font-weight: lighter;
   font-size: 15px;
   color: #666666;
-  margin:auto;
 }
 #licence{
   font-size: 9px;
