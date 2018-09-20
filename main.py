@@ -33,13 +33,8 @@ def showTicketList(page):
     else:
         #Checking of it exist a next or previous page of tickets,
         #if yes, assing the page number for next and previous page
-        prev = 0
-        next = 0
-
-        if tickets_from_api["previous_page"] is not None:
-            prev = page - 1
-        if tickets_from_api["next_page"] is not None:
-            next = page + 1
+        prev = page - 1 if tickets_from_api["previous_page"] is not None else 0
+        next = page + 1 if tickets_from_api["next_page"] is not None else 0
 
         return render_template(
             "ticketlist.html", tickets=tickets_from_api["tickets"], prev=prev, next=next, page=page)
@@ -49,7 +44,7 @@ def showTicketList(page):
 def page_not_found(e):
     return render_template('error.html', error="500 - Something went wrong")
 
-#handle error if route/page isnt found
+#handle error if route/page isn't found
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('error.html', error="404 - Page not found")

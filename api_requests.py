@@ -18,7 +18,7 @@ def get_page_of_tickets(page):
             mail, token))
         return json.loads(response.text)
 
-#fetch single ticket from api
+#fetch a single ticket from api
 #Parameter - id of ticket to request
 def get_single_ticket(id):
     url = 'https://karihdb.zendesk.com/api/v2/tickets/' + str(id) + '.json'
